@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<title>WRAPD: Weighted Rotation-aware ADMM for Parameterization and Deformation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+body {
+    font: 16px source-sans-pro-1, source-sans-pro-2, "Source Sans Pro", "Lucida Sans", "Lucida Sans Unicode", "Bitstream Vera Sans", Tahoma, sans-serif;
+    line-height: 1.5em;
+    background: white;
+    color: black;
+    width: 640px;
+    margin: 2em auto;}
+h1 {
+    font-size: 1.8em;
+    line-height: 1.2em;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap}
+#authors, #venue {
+    visibility: hidden;}
+#authors a, #authors span {
+    visibility: visible;
+    margin: 0 0.5em;}
+#venue span {
+    visibility: visible;
+    margin: 0 1em;}
+pre {
+    font-size: 0.8em;
+    width: auto;
+    overflow: auto;}
+</style>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+<script type="text/javascript" src="http://use.typekit.com/nri4usf.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+</head>
+
+<body>
+
+<h1>WRAPD: Weighted Rotation-aware ADMM<br>for Parameterization and Deformation</h1>
+
+<center>
+<p id="authors">
+<a href="http://www-users.cs.umn.edu/~brow2327/">George E. Brown</a>, <span>University of Minnesota</span></span>;<br>
+<a href="http://rahul.narain.name/">Rahul Narain</a>, <span>Indian Institute of Technology Delhi</span></span>.
+
+<p id="venue">
+<span><i>ACM Transactions on Graphics (Proc. SIGGRAPH), 2021.</i></span>.
+
+<p id="repimg"><img width="560" src="../images/wrapd_rep_image.jpg">
+</center>
+
+<p><b>Abstract:</b> Local-global solvers such as ADMM for elastic simulation and geometry optimization struggle to resolve large rotations such as bending and twisting modes, and large distortions in the presence of barrier energies. We propose two improvements to address these challenges. First, we introduce a novel local-global splitting based on the polar decomposition that separates the geometric nonlinearity of rotations from the material nonlinearity of the deformation energy. The resulting ADMM-based algorithm is a combination of an L-BFGS solve in the global step and proximal updates of element stretches in the local step. We also introduce a novel method for dynamic reweighting that is used to adjust element weights at runtime for improved convergence. With both improved rotation handling and element weighting, our algorithm is considerably faster than state-of-the-art approaches for quasi-static simulations. It is also much faster at making early progress in parameterization problems, making it valuable as an initializer to jump-start second-order algorithms.
+
+<ul>
+	<li><p><a href="http://www-users.cs.umn.edu/~brow2327/wrapd/wrapd_paper.pdf">Preprint</a> (PDF, 18.1 MB)</li>
+	<li><p><a href="http://www-users.cs.umn.edu/~brow2327/wrapd/wrapd_supplementary.pdf">Supplementary material</a> (PDF, 1.3 MB)</li>
+	<li><p>Our reference implementation is split across two separate repositories:</li>
+	<ul>
+		<li><p><a href="https://github.com/georgbrown/wrapd-2d">Code: Surface parameterization</a></li>
+		<li><p><a href="https://github.com/georgbrown/wrapd">Code: Quasi-static deformation</a></li>
+	</ul>
+</ul>
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_0yJOfToowM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+</body>
+
+<p><br/>
+<b>Erratum:</b>
+<br>
+For parameterization problems the ADMM dual variables Zi and Ui are re-initialized after the very first ADMM iteration. Specifically, each Zi is set to the new sym((Di*X)^T), and Ui is set to zero. In subsequent iterations the variables are updated as described in the paper.
+
+<p><br/>
+<b>BibTeX:</b>
+<pre>
+@article{brown2021wrapd,
+  title={WRAPD: Weighted Rotation-aware ADMM for Parameterization and Deformation},
+  author={Brown, George E. and Narain, Rahul},
+  year={2021},
+  journal={ACM Transactions on Graphics (Proc. SIGGRAPH)},
+  volume={40},
+  number={4},
+  article={82},
+  month={8},
+  publisher={ACM},
+}
+</pre>
+</p>
+
+</html>
