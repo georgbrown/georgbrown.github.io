@@ -44,7 +44,7 @@ pre {
 
 <center>
 <p id="authors">
-<a href="http://www-users.cs.umn.edu/~brow2327/">George E. Brown</a>, <span>University of Minnesota</span></span>;<br>
+<a href="https://georgbrown.github.io/">George E. Brown</a>, <span>University of Minnesota</span></span>;<br>
 <a href="http://rahul.narain.name/">Rahul Narain</a>, <span>Indian Institute of Technology Delhi</span></span>.
 
 <p id="venue">
@@ -56,8 +56,8 @@ pre {
 <p><b>Abstract:</b> Local-global solvers such as ADMM for elastic simulation and geometry optimization struggle to resolve large rotations such as bending and twisting modes, and large distortions in the presence of barrier energies. We propose two improvements to address these challenges. First, we introduce a novel local-global splitting based on the polar decomposition that separates the geometric nonlinearity of rotations from the material nonlinearity of the deformation energy. The resulting ADMM-based algorithm is a combination of an L-BFGS solve in the global step and proximal updates of element stretches in the local step. We also introduce a novel method for dynamic reweighting that is used to adjust element weights at runtime for improved convergence. With both improved rotation handling and element weighting, our algorithm is considerably faster than state-of-the-art approaches for quasi-static simulations. It is also much faster at making early progress in parameterization problems, making it valuable as an initializer to jump-start second-order algorithms.
 
 <ul>
-	<li><p><a href="http://www-users.cs.umn.edu/~brow2327/wrapd/wrapd_paper.pdf">Preprint</a> (PDF, 18.1 MB)</li>
-	<li><p><a href="http://www-users.cs.umn.edu/~brow2327/wrapd/wrapd_supplementary.pdf">Supplementary material</a> (PDF, 1.3 MB)</li>
+	<li><p><a href="https://georgbrown.github.io/wrapd/wrapd_paper.pdf">Preprint</a> (PDF, 18.1 MB)</li>
+	<li><p><a href="https://georgbrown.github.io/wrapd/wrapd_supplementary.pdf">Supplementary material</a> (PDF, 1.3 MB)</li>
 	<li><p>Our reference implementation is split across two separate repositories:</li>
 	<ul>
 		<li><p><a href="https://github.com/georgbrown/wrapd-2d">Code: Surface parameterization</a></li>
